@@ -1,5 +1,7 @@
 package services;
-import entities.*;
+import entities.Admin;
+import entities.Cashier;
+
 public class Menu {
     public static void displayMainMenu() {
         clearConsole();
