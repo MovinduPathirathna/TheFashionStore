@@ -6,8 +6,9 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class BillingService {
-    private ArrayList<Bill> bills;
-    private InventoryService inventory;
+    final private ArrayList<Bill> bills;
+    final private InventoryService inventory;
+    //added the final key word
 
     public BillingService(InventoryService inventory) {
         this.bills = new ArrayList<>();
@@ -46,11 +47,6 @@ public class BillingService {
         return new ArrayList<>(bills);
     }
 
-    public double getTotalSales() {
-        double total = 0;
-        for (Bill bill : bills) {
-            total += bill.getFinalAmount();
-        }
-        return total;
-    }
+    // Removed the never used getTotalSales method
+
 }
