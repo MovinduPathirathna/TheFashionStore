@@ -1,6 +1,5 @@
 package services;
 import entities.Cashier;
-import entities.User;
 import java.util.ArrayList;
 
 public class CashierService{
