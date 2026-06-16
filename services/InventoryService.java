@@ -3,7 +3,8 @@ import entities.Item;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class InventoryService {
     private final ArrayList<Item> items = new ArrayList<>();
