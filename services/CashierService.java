@@ -1,5 +1,4 @@
 package services;
-import entities.Admin;
 import entities.Cashier;
 import entities.User;
 import java.util.ArrayList;
