@@ -1,9 +1,10 @@
 package entities;
 
 public class BillItem {
-    private Item item;
-    private int quantity;
-    private double total;
+   final private Item item;
+   final private int quantity;
+   final private double total;
+    // added the final key word
 
     public BillItem(Item item, int quantity) {
         this.item = item;
@@ -11,8 +12,7 @@ public class BillItem {
         this.total = item.getPrice() * quantity;
     }
 
-    public Item getItem() { return item; }
-    public int getQuantity() { return quantity; }
+    // removed the never used getItem method and getQuantity method
     public double getTotal() { return total; }
 
     @Override
