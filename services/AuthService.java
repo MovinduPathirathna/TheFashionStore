@@ -1,8 +1,10 @@
 package services;
-import entities.*;
+import entities.Admin;
+import entities.Cashier;
+
 public class AuthService {
     private AdminService adminService;
-    private CashierService cashierService;
+     private CashierService cashierService;
     private Admin currentAdmin;
     private Cashier currentCashier;
 
