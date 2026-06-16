@@ -1,12 +1,12 @@
 package services;
-import entities.*;
+import entities.Item;
 import java.nio.file.*;
 import java.io.IOException;
 import java.util.*;
 
 public class InventoryService {
-    private ArrayList<Item> items = new ArrayList<>();
-    String file = "data/inventory.txt";
+    private final ArrayList<Item> items = new ArrayList<>();
+    private final String file = "data/inventory.txt";
     public InventoryService() {
         loadInventory();
     }
