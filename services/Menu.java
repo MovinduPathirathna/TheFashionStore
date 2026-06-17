@@ -1,6 +1,14 @@
 package services;
-import entities.*;
+import entities.Admin;
+import entities.Cashier;
+/**
+ * Boundary/UI Class responsible for generating styled system terminals
+ * and operational dashboards.
+ */
 public class Menu {
+    /**
+     * Renders primary landing terminal dashboard.
+     */
     public static void displayMainMenu() {
         clearConsole();
         System.out.println("=".repeat(50));
@@ -12,7 +20,9 @@ public class Menu {
         System.out.println("=".repeat(50));
         System.out.print("Select option: ");
     }
-
+    /**
+     * Renders workspace modules restricted to system administrators.
+     */
     public static void displayAdminMenu(Admin admin) {
         clearConsole();
         System.out.println("=".repeat(50));
@@ -28,6 +38,9 @@ public class Menu {
         System.out.println("=".repeat(50));
         System.out.print("Select option: ");
     }
+    /**
+     * Renders standard transaction modules restricted to retail cashiers.
+     */
 
     public static void displayCashierMenu(Cashier cashier) {
         clearConsole();
@@ -41,6 +54,9 @@ public class Menu {
         System.out.println("=".repeat(50));
         System.out.print("Select option: ");
     }
+    /**
+     * Prints specific subsection routing for stock operations.
+     */
 
     public static void manageStockMenu(){
         System.out.println("\n--- STOCK MANAGEMENT ---");
@@ -51,7 +67,9 @@ public class Menu {
         System.out.println("5. Back to Main Menu");
         System.out.print("Select: ");
     }
-
+    /**
+     * Prints specific subsection routing for user profile mutations.
+     */
     public static void manageUsersMenu(){
         System.out.println("\n--- USER MANAGEMENT ---");
         System.out.println("1. Add New User");
@@ -60,6 +78,9 @@ public class Menu {
         System.out.println("4. Back to Main Menu");
         System.out.print("Select: ");
     }
+    /**
+     * Environment utilities evaluating shell instances to clear visibility cleanly.
+     */
     public static void clearConsole() {
         try {
             if (System.getProperty("os.name").contains("Windows")) {
