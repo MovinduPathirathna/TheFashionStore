@@ -15,12 +15,12 @@ import services.Menu;
 import services.Bill;
 
 public class Main {
-    private static Scanner scanner = new Scanner(System.in);
-    private static AdminService adminService = new AdminService();
-    private static CashierService cashierService = new CashierService();
-    private static InventoryService inventoryService = new InventoryService();
-    private static BillingService billingService = new BillingService(inventoryService);
-    private static ReportService reportService = new ReportService(billingService, inventoryService);
+    private static final Scanner scanner = new Scanner(System.in);
+    private static final AdminService adminService = new AdminService();
+    private static final CashierService cashierService = new CashierService();
+    private static final InventoryService inventoryService = new InventoryService();
+    private static final BillingService billingService = new BillingService(inventoryService);
+    private static final ReportService reportService = new ReportService(billingService, inventoryService);
     private static AuthService authServiceAdmin;
     private static AuthService authServiceCashier;
 
