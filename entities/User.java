@@ -1,3 +1,9 @@
+/**
+ * Represents a generic User entity in the system.
+ * Handles user attributes and automatic ID generation.
+ * * @author YourName
+ * @version 1.0
+ */
 package entities;
 
 public class User {

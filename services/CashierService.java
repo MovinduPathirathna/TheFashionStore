@@ -1,3 +1,10 @@
+/**
+ * Service class to manage Cashier business logic.
+ * Handles cashier creation, removal, authentication, and data retrieval.
+ *
+ * @author YourName
+ * @version 1.0
+ */
 package services;
 import entities.Cashier;
 import java.util.ArrayList;

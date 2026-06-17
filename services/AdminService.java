@@ -1,3 +1,9 @@
+/**
+ * Service class to manage Admin business logic.
+ * Handles admin creation, deletion, authentication, and data retrieval.
+ * * @author YourName
+ * @version 1.0
+ */
 package services;
 import entities.Admin;
 import java.util.ArrayList;
