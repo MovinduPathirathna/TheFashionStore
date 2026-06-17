@@ -267,8 +267,18 @@ public class Main {
         System.out.print("Quantity: ");
         int quantity = scanner.nextInt();
         scanner.nextLine();
+        String code = generateCode(type, size, color);
 
+        Item newItem = new Item(code, name, type, size, color, price, quantity);
+        if (inventoryService.addItem(newItem)) {
+            System.out.println("Item added successfully!");
+            inventoryService.saveInventory();
+        } else {
+            System.out.println("Item code already exists!");
+        }
+    }
 
+    private static String generateCode(String type, String size, String color){
         String code="";
         if (type.equalsIgnoreCase("shirt")) { code = code.concat("1"); }
         else if (type.equalsIgnoreCase("t-shirt")) { code = code.concat("2"); }
@@ -288,14 +298,7 @@ public class Main {
         else if(color.equalsIgnoreCase("red")){ code = code.concat("5"); }
         else if(color.equalsIgnoreCase("brown")){ code = code.concat("6"); }
         else if(color.equalsIgnoreCase("yellow")){ code = code.concat("7"); }
-
-        Item newItem = new Item(code, name, type, size, color, price, quantity);
-        if (inventoryService.addItem(newItem)) {
-            System.out.println("Item added successfully!");
-            inventoryService.saveInventory();
-        } else {
-            System.out.println("Item code already exists!");
-        }
+        return code;
     }
 
     private static void updateStock() {
