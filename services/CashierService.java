@@ -16,6 +16,7 @@ public class CashierService{
         cashiers.add(new Cashier("Cashier1", 25, "987654321V", "Female",
                 "0712345678", "Kandy", "cashier123"));
     }
+    // Registers a new cashier in the system
     public static boolean addCashier(String name, int age, String nic, String gender,
                             String phone, String address, String password) {
         cashiers.add(new Cashier(name, age, nic, gender, phone, address, password));
