@@ -199,7 +199,7 @@ public class Main {
         System.out.print("Enter discount percentage: ");
         double discount = scanner.nextDouble();
         bill.applyDiscount(discount);
-        if (bill != null && !bill.toString().isEmpty()) {
+        if (!bill.toString().isEmpty()) {   //removed always true condition bill!=null
             System.out.println(bill);
             System.out.println("Press Enter to continue...");
             scanner.nextLine();
