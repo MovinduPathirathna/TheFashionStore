@@ -2,7 +2,14 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import entities.*;
-import services.*;
+import services.AdminService;
+import services.CashierService;
+import services.InventoryService;
+import services.AuthService;
+import services.ReportService;
+import services.BillingService;
+import services.Menu;
+import services.Bill;
 
 public class Main {
     private static Scanner scanner = new Scanner(System.in);
@@ -14,9 +21,8 @@ public class Main {
     private static AuthService authServiceAdmin;
     private static AuthService authServiceCashier;
 
-    public static void main(String[] args) {
+    public static void main(String[] args){
         System.out.println("Welcome...");
-
         while (true) {
             Menu.displayMainMenu();
             String choice = scanner.next();
