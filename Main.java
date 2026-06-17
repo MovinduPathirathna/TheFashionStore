@@ -1,22 +1,31 @@
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
-import entities.*;
-import services.*;
+import entities.Admin;
+import entities.Cashier;
+import entities.Item;
+import entities.User;
+import services.AdminService;
+import services.CashierService;
+import services.InventoryService;
+import services.AuthService;
+import services.ReportService;
+import services.BillingService;
+import services.Menu;
+import services.Bill;
 
 public class Main {
-    private static Scanner scanner = new Scanner(System.in);
-    private static AdminService adminService = new AdminService();
-    private static CashierService cashierService = new CashierService();
-    private static InventoryService inventoryService = new InventoryService();
-    private static BillingService billingService = new BillingService(inventoryService);
-    private static ReportService reportService = new ReportService(billingService, inventoryService);
+    private static final Scanner scanner = new Scanner(System.in);
+    private static final AdminService adminService = new AdminService();
+    private static final CashierService cashierService = new CashierService();
+    private static final InventoryService inventoryService = new InventoryService();
+    private static final BillingService billingService = new BillingService(inventoryService);
+    private static final ReportService reportService = new ReportService(billingService, inventoryService);
     private static AuthService authServiceAdmin;
     private static AuthService authServiceCashier;
 
-    public static void main(String[] args) {
+    public static void main(String[] args){
         System.out.println("Welcome...");
-
         while (true) {
             Menu.displayMainMenu();
             String choice = scanner.next();
@@ -190,7 +199,7 @@ public class Main {
         System.out.print("Enter discount percentage: ");
         double discount = scanner.nextDouble();
         bill.applyDiscount(discount);
-        if (bill != null && !bill.toString().isEmpty()) {
+        if (!bill.toString().isEmpty()) {   //removed always true condition bill!=null
             System.out.println(bill);
             System.out.println("Press Enter to continue...");
             scanner.nextLine();
@@ -258,8 +267,18 @@ public class Main {
         System.out.print("Quantity: ");
         int quantity = scanner.nextInt();
         scanner.nextLine();
+        String code = generateCode(type, size, color);
 
+        Item newItem = new Item(code, name, type, size, color, price, quantity);
+        if (inventoryService.addItem(newItem)) {
+            System.out.println("Item added successfully!");
+            inventoryService.saveInventory();
+        } else {
+            System.out.println("Item code already exists!");
+        }
+    }
 
+    private static String generateCode(String type, String size, String color){
         String code="";
         if (type.equalsIgnoreCase("shirt")) { code = code.concat("1"); }
         else if (type.equalsIgnoreCase("t-shirt")) { code = code.concat("2"); }
@@ -279,14 +298,7 @@ public class Main {
         else if(color.equalsIgnoreCase("red")){ code = code.concat("5"); }
         else if(color.equalsIgnoreCase("brown")){ code = code.concat("6"); }
         else if(color.equalsIgnoreCase("yellow")){ code = code.concat("7"); }
-
-        Item newItem = new Item(code, name, type, size, color, price, quantity);
-        if (inventoryService.addItem(newItem)) {
-            System.out.println("Item added successfully!");
-            inventoryService.saveInventory();
-        } else {
-            System.out.println("Item code already exists!");
-        }
+        return code;
     }
 
     private static void updateStock() {
