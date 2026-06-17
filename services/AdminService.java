@@ -15,6 +15,7 @@ public class AdminService{
         admins.add(new Admin("Admin", 30, "123456789V", "Male",
                 "0112345678", "Colombo", "admin123"));
     }
+    // Make this static too, since it operates on a static list
     public static boolean addAdmin(String name, int age, String nic, String gender,
                            String phone, String address, String password) {
         admins.add(new Admin(name, age, nic, gender, phone, address, password));
