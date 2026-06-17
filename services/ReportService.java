@@ -1,10 +1,10 @@
 package services;
-import entities.*;
+import entities.Item;
 import java.util.ArrayList;
 
 public class ReportService {
-    private BillingService billingService;
-    private InventoryService inventoryService;
+    private final BillingService billingService;
+    private final InventoryService inventoryService;
 
     public ReportService(BillingService billingService, InventoryService inventoryService) {
         this.billingService = billingService;
