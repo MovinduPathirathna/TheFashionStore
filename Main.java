@@ -1,7 +1,10 @@
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
-import entities.*;
+import entities.Admin;
+import entities.Cashier;
+import entities.Item;
+import entities.User;
 import services.AdminService;
 import services.CashierService;
 import services.InventoryService;
