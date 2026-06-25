@@ -8,7 +8,8 @@ package services;
 import entities.Admin;
 import java.util.ArrayList;
 
-public class AdminService{
+public class
+AdminService{
     private static ArrayList<Admin> admins;
     public AdminService() {
         admins = new ArrayList<>();// Add default users

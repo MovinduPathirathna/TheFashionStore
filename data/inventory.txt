@@ -1,10 +1,10 @@
 133,Casual Shirt,Shirt,M,Blue,2500.0,50
 144,Formal Shirt,Shirt,L,White,3500.0,26
-251,Polo T-Shirt,T-Shirt,XL,Black,1500.0,100
+251,Polo T-Shirt,T-Shirt,XL,Black,1500.0,93
 235,Cotton T-Shirt,T-Shirt,M,Red,1200.0,80
-343,Denim Trouser,Trousers,L,Blue,4500.0,39
+343,Denim Trouser,Trousers,L,Blue,4500.0,34
 422,Sports Shorts,Shorts,S,Green,1800.0,46
 436,Cargo Shorts,Shorts,M,Brown,2200.0,28
 331,office trouser,trouser,M,black,2000.0,28
-243,Baggy t-shirt,t-shirt,L,blue,1500.0,40
+243,Baggy t-shirt,t-shirt,L,blue,1500.0,34
 233,Sports vest,t-shirt,M,blue,1200.0,48
